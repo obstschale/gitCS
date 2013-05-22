@@ -29,7 +29,7 @@ all scripts can be found in the `scripts` folder
 ### git-loglive
 Shows and updates the git log live.
 
-```shell
+```sh
 #!/bin/bash
  
 while :
@@ -46,7 +46,7 @@ Will generate random files and commit them. Good for seminars and workshops.
 
 Usage: `generaterandomchanges <filecount> <filenamebase> <filenameextension>`
 
-```shell
+```sh
 #!/bin/bash
  
 #Ensure we have the quantity specified on the CLI
