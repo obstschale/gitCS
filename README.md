@@ -7,7 +7,7 @@ If you know a nice git command or maybe you have a good script feel free to send
 ---
 ## git aliases
 
-**pretty online log**
+###pretty oneline log
 
 `git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`
 
@@ -16,6 +16,14 @@ If you know a nice git command or maybe you have a good script feel free to send
 **Show staged diff**
 
 `git diff --staged`
+
+###reset file
+####reset to latest commit
+`git checkout -- <file>`
+
+####reset file to state 2 commits ago
+`git checkout HEAD^ -- <file>` (or replace `HEAD^` with any other commit syntax like an explicit SHA1).﻿
+
 
 ## one liner (cmd)
 
@@ -78,3 +86,4 @@ done
 
 * [@tlberglund](https://github.com/tlberglund) → [git-loglive](https://gist.github.com/tlberglund/3714970)
 * [@matthewmccullough](https://github.com/matthewmccullough) → [generaterandomchanges](https://github.com/matthewmccullough/scripts/blob/master/generaterandomchanges)
+* [Sebastian Schuberth](https://plus.google.com/u/0/107276674876700831183)
