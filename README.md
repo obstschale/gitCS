@@ -9,7 +9,7 @@ If you know a nice git command or maybe you have a good script feel free to send
 
 **pretty online log**
 
-`git log --all --decorate --abbrev-commit --oneline --graph`
+`git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`
 
 ![pretty git log](images/git-log.png)
 
