@@ -13,6 +13,10 @@ If you know a nice git command or maybe you have a good script feel free to send
 
 ![pretty git log](images/git-log.png)
 
+**Show staged diff**
+
+`git diff --staged`
+
 ## one liner (cmd)
 
 **count lines of all files in git repo**
