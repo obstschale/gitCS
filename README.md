@@ -84,7 +84,20 @@ for (( filenumber = 1; filenumber <= $count ; filenumber++ )); do
     git commit -m"A random change of $RANDOM to $filenamebase$filenumber.$filenameextension"
 done
 ```
+###stats for your git repo
 
+```sh
+IFS=''
+for author in $(git log --all --format="%an" | sort -u)
+do
+  git log --author="$author" --pretty=tformat: --numstat | \
+  grep -v node_modules |  \
+  awk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END \
+  { printf "%s +++ / %s --- / %s ++- \n",add,subs,loc }' -
+done
+```
+
+Will ouput something like this: `135 +++ / 14 --- / 121 ++-`
 ---
 ### Sources
 
