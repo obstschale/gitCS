@@ -9,7 +9,7 @@ If you know a nice git command or maybe you have a good script feel free to send
 
 ###pretty oneline log
 
-`git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`
+	git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 ![pretty git log](images/git-log.png)
 
@@ -24,6 +24,10 @@ If you know a nice git command or maybe you have a good script feel free to send
 ####reset file to state 2 commits ago
 `git checkout HEAD^ -- <file>` (or replace `HEAD^` with any other commit syntax like an explicit SHA1).﻿
 
+###show last 10 branches
+quickly see the last 10 branches you've worked on (especially helpful when jumping back and forth between branches).
+	
+	git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
 
 ## one liner (cmd)
 
