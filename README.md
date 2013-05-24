@@ -96,8 +96,8 @@ do
   { printf "%s +++ / %s --- / %s ++- \n",add,subs,loc }' -
 done
 ```
-
 Will ouput something like this: `135 +++ / 14 --- / 121 ++-`
+
 ---
 ### Sources
 
