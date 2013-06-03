@@ -5,11 +5,29 @@ gitCS is my cheat sheet repo. There are so many nice git commands, scripts and t
 If you know a nice git command or maybe you have a good script feel free to send a pull request.
 
 ---
+ToC
+---
+#### git aliases
+* [pretty oneline log](#pretty-oneline-log)
+* [reset file](#reset-file)
+* [show last 10 branches](#show-last-10-branches)
+* [create empty branch](#create-empty-branch)
+
+#### one liner (cmd)
+* [count lines of all files in git repo](#count-lines-of-all-files-in-git-repo)
+
+#### scripts
+* [git-loglive](#git-loglive)
+* [generaterandomchanges](#generaterandomchanges)
+
+---
 ## git aliases
 
-###pretty oneline log
+### pretty oneline log
 
-	git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	git log --all --color --graph --pretty=format:'%Cred%h%Creset \
+		-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+		--abbrev-commit
 
 ![pretty git log](images/git-log.png)
 
@@ -17,21 +35,31 @@ If you know a nice git command or maybe you have a good script feel free to send
 
 `git diff --staged`
 
-###reset file
-####reset to latest commit
+### reset file
+#### reset to latest commit
 `git checkout -- <file>`
 
-####reset file to state 2 commits ago
+#### reset file to state 2 commits ago
 `git checkout HEAD^ -- <file>` (or replace `HEAD^` with any other commit syntax like an explicit SHA1).﻿
 
-###show last 10 branches
+### show last 10 branches
 quickly see the last 10 branches you've worked on (especially helpful when jumping back and forth between branches).
 	
-	git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
+	git for-each-ref --sort=-committerdate --count=10 \
+		--format='%(refname:short)' refs/heads/
+
+### create empty branch
+Normally branches share files from the directory, but in Git it is possible to create empty branches.
+
+You can create a new empty branch like this:
+`git checkout --orphan NEWBRANCH`
+
+Since you want to create a new empty branch that has nothing to do with the original branch, you can delete all files in the new working directory:
+`git rm -rf .`
 
 ## one liner (cmd)
 
-**count lines of all files in git repo**
+### count lines of all files in git repo
 
 * outputs the total number of loc
 	* `git ls-files | xargs cat | wc -l`
@@ -84,7 +112,7 @@ for (( filenumber = 1; filenumber <= $count ; filenumber++ )); do
     git commit -m"A random change of $RANDOM to $filenamebase$filenumber.$filenameextension"
 done
 ```
-###stats for your git repo
+### stats for your git repo
 
 ```sh
 IFS=''
