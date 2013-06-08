@@ -73,7 +73,7 @@ Do you find yourself staring at a mess when you type git branch. Cleanup after y
 
 git branch-cleanup Will delete any local branches that have already been merged as well as prune remote branches that have been deleted from your origin repo.
 
-    !sh -c 'git branch --merged | grep -v master | xargs git branch -d && git remote prune origin'
+    git branch --merged | grep -v master | xargs git branch -d && git remote prune origin
 
 ## scripts
 
