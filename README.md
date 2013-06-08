@@ -15,6 +15,7 @@ ToC
 
 #### one liner (cmd)
 * [count lines of all files in git repo](#count-lines-of-all-files-in-git-repo)
+* [git branch-cleanup](#git-branch-cleanup)
 
 #### scripts
 * [git-loglive](#git-loglive)
@@ -44,7 +45,7 @@ ToC
 
 ### show last 10 branches
 quickly see the last 10 branches you've worked on (especially helpful when jumping back and forth between branches).
-	
+
 	git for-each-ref --sort=-committerdate --count=10 \
 		--format='%(refname:short)' refs/heads/
 
@@ -65,6 +66,14 @@ Since you want to create a new empty branch that has nothing to do with the orig
 	* `git ls-files | xargs cat | wc -l`
 * outputs loc for each file & sum
 	* `git ls-files | xargs wc -l`
+
+### git branch-cleanup
+
+Do you find yourself staring at a mess when you type git branch. Cleanup after yourself with ease with this git alias.
+
+git branch-cleanup Will delete any local branches that have already been merged as well as prune remote branches that have been deleted from your origin repo.
+
+    !sh -c 'git branch --merged | grep -v master | xargs git branch -d && git remote prune origin'
 
 ## scripts
 
@@ -132,3 +141,4 @@ Will ouput something like this: `135 +++ / 14 --- / 121 ++-`
 * [@tlberglund](https://github.com/tlberglund) → [git-loglive](https://gist.github.com/tlberglund/3714970)
 * [@matthewmccullough](https://github.com/matthewmccullough) → [generaterandomchanges](https://github.com/matthewmccullough/scripts/blob/master/generaterandomchanges)
 * [Sebastian Schuberth](https://plus.google.com/u/0/107276674876700831183)
+* [Robin Curry](https://github.com/robincurry) → [git branch-cleanup](https://coderwall.com/p/buo9nq)
