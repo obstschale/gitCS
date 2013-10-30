@@ -19,6 +19,7 @@ ToC
 
 #### scripts
 * [git-loglive](#git-loglive)
+* [git-graphlive](#git-loglive)
 * [generaterandomchanges](#generaterandomchanges)
 
 ---
@@ -90,6 +91,21 @@ do
     clear
     git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
     sleep 1
+done
+```
+
+### git-graphlive
+
+Similar script like git-loglive
+
+```sh
+#!/bin/bash
+
+while :
+do
+    clear
+    git --no-pager log -$1 --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s' --abbrev-commit --date=relative
+    sleep 2
 done
 ```
 
