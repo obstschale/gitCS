@@ -12,6 +12,7 @@ ToC
 * [reset file](#reset-file)
 * [show last 10 branches](#show-last-10-branches)
 * [create empty branch](#create-empty-branch)
+* [git today](#git-today)
 
 #### one liner (cmd)
 * [count lines of all files in git repo](#count-lines-of-all-files-in-git-repo)
@@ -58,6 +59,11 @@ You can create a new empty branch like this:
 
 Since you want to create a new empty branch that has nothing to do with the original branch, you can delete all files in the new working directory:
 `git rm -rf .`
+
+### git today
+Quickly see what you've done today
+
+`git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"`
 
 ## one liner (cmd)
 
@@ -158,3 +164,4 @@ Will ouput something like this: `135 +++ / 14 --- / 121 ++-`
 * [@matthewmccullough](https://github.com/matthewmccullough) → [generaterandomchanges](https://github.com/matthewmccullough/scripts/blob/master/generaterandomchanges)
 * [Sebastian Schuberth](https://plus.google.com/u/0/107276674876700831183)
 * [Robin Curry](https://github.com/robincurry) → [git branch-cleanup](https://coderwall.com/p/buo9nq)
+* [Roberto Bonvallet](https://github.com/rbonvall) → [git today](https://coderwall.com/p/7jbwww?utm_campaign=weekly_digest&utm_content=Tell+us+about+your&utm_medium=email)
