@@ -13,6 +13,7 @@ ToC
 * [show last 10 branches](#show-last-10-branches)
 * [create empty branch](#create-empty-branch)
 * [git today](#git-today)
+* [git dad](#git-dad)
 
 #### one liner (cmd)
 * [count lines of all files in git repo](#count-lines-of-all-files-in-git-repo)
@@ -64,6 +65,16 @@ Since you want to create a new empty branch that has nothing to do with the orig
 Quickly see what you've done today
 
 `git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"`
+
+### git dad
+(Found on [r/git](https://www.reddit.com/r/git/comments/6ecr4o/git_dad/) by [kannonboy](https://www.reddit.com/user/kannonboy))
+
+    $ git config --global alias.dad '!curl https://icanhazdadjoke.com/ && git add'
+    $ git dad .
+    I used to hate facial hair, but then it grew on me.
+
+Since git's aliasing system passes any parameter on to the underlying command, your `git add` operation completes normally _and_ you get a bonus dad joke.    
+    
 
 ## one liner (cmd)
 
